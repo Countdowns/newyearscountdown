@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+
+<head><title>New Year's Countdown</title>
+<meta name="description" content="This is the New Year's Countdown! We count backwards till midnight - have a look!" />
+
+<meta property="og:title" content="New Year's Countdown"/>
+<meta property="og:type" content="cause"/>
+<meta property="og:url" content="http://newyearscountdown.org/"/>
+<meta property="og:image" content="http://newyearscountdown.org/newyearscountdown.jpg"/>
+<meta property="og:site_name" content="New Year's Countdown"/>
+<meta property="fb:admins" content="500108777"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:description" content="This is the New Year's Countdown! We count backwards till midnight - have a look!"/>
+
+<style type="text/css">
+body{background:#000;height:99%;margin-top:16%;}
+#Uhr{margin:auto;width:800px;text-align:center;font-family:Tahoma;font-size:70px;color:white;}
+#small{margin:auto;text-align:center;font-family:Georgia;font-size:10px;color:#aaa;}
+#small a{margin:auto;text-align:center;font-family:Georgia;font-size:10px;color:#aaa;}
+</style>
+
+<script type='text/javascript'>
+<!--
+var now = new Date();
+var year = now.getYear();
+if (year < 1900) {
+	year += 1900;
+}
+var end = new Date("December 31, " + year + " 24:00:00 ");
+
+document.write('<div id="Uhr">');
+document.write('<span id="ssekunden" style="font-size:110px;">;</span>');
+
+
+function suhr(n) {
+  s = "";
+  if (n < 10) s += "0";
+  return (s + n).toString();
+}
+function scount(n) {
+  s = "";
+  if (n < 10) s += "00";
+  else if (n < 100) s += "0";
+  return (s + n).toString();
+}
+function countdown() {
+  d = new Date();
+  count = Math.floor(end.getTime() - d.getTime());
+  if(count > 0) {
+    miliseconds = scount(count%1000); count = Math.floor(count/1000);
+    seconds = suhr(count%60); count = Math.floor(count/60);
+    minutes = suhr(count%60); count = Math.floor(count/60);
+    hours = suhr(count%24); count = Math.floor(count/24);
+    days = count;
+    document.getElementById('ssekunden').innerHTML = '<b>' + days + ':' + hours + ':' + minutes + ':' + seconds + '';
+    setTimeout("countdown()", 50);
+  }
+}
+//-->
+</script>
+
+<script type="text/javascript">var switchTo5x=false;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'5c0223a9-ab21-4d29-ac33-8cfe4a0d41f0'});</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18304660-18']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body onload="countdown();">
+
+<span id="silvester"></span></div><br /><br /><br /><br /><br />
+
+
+<div id="small">Welcome to the <strong>New Year's Countdown</strong>! We count backwards till midnight. <br />Please share this site and spread it on Twitter and Facebook:<br /><br />  
+<span  class='st_facebook_button' displayText='Facebook'></span><span  class='st_twitter_button' displayText='Tweet'></span><span  class='st_linkedin_button' displayText='LinkedIn'></span><span  class='st_tumblr_button' displayText='Tumblr'></span><span  class='st_plusone_button' ></span><br /><br /> 
+New Year's Countdown is a <a href="http://4hourventure.com" rel="nofollow">4 hour venture</a> by <a href="http://twitter.com/dittes" rel="nofollow">@dittes</a>.</div>
+</body></html>
